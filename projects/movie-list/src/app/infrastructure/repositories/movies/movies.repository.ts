@@ -12,9 +12,19 @@ import { MovieResource } from "../../resources/movies.resource";
 export class MoviesRepository {
   constructor(private remoteGateway: RemoteGateway) {}
 
-  retrieveNowPlaying(): Observable<IQueryResult<Array<any>>> {
+  retrieveNowPlaying(): Observable<IQueryResult<Array<Movie>>> {
     return this.remoteGateway.get(`movie/now_playing`).pipe(
-      map((resources: Array<any>) => resources.map(r => new Object(r))),
+      map((resources: Array<MovieResource>) => resources.map(r => new Movie(r))),
+      asQueryResult(),
+    )
+  }
+
+  // TODO: Verificar porque com pagina não funciona
+  retrievePopularMovies(): Observable<IQueryResult<Page<Movie>>> {
+    return this.remoteGateway.get(`movie/popular`).pipe(
+      map((pageResource: PageResource<MovieResource>) =>
+        Page.fromPageResource(pageResource, r => new Movie(r)),
+      ),
       asQueryResult(),
     )
   }

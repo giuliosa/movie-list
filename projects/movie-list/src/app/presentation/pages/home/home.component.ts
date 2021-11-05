@@ -13,7 +13,7 @@ export class HomeComponent {
     private activatedRoute: ActivatedRoute,
   ) {
     console.log('Entrou no home')
-    this.movieRepository.retrieveMoviesById('580489').subscribe(movie => {
+    this.movieRepository.retrievePopularMovies().subscribe(movie => {
       console.log(movie)
     })
 
