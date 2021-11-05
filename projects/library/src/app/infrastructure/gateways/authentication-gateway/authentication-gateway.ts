@@ -11,35 +11,21 @@ export class AuthenticationGateway {
     @Inject(serverAuthUrlToken) readonly serverLoginUrl: string,
   ) {}
 
-  public authenticate(tenantId: string, token: string, companyId: string) {
-    this.localStorageRepository.set(ApplicationKey.TenantId, tenantId)
+  public authenticate(token: string) {
     this.localStorageRepository.set(ApplicationKey.Token, token)
-    this.localStorageRepository.set(ApplicationKey.CompanyId, companyId)
   }
 
   public unauthenticated() {
-    this.localStorageRepository.remove(ApplicationKey.TenantId)
     this.localStorageRepository.remove(ApplicationKey.Token)
-    this.localStorageRepository.remove(ApplicationKey.Company)
   }
 
   public get isAuthenticated(): boolean {
     return (
-      this.localStorageRepository.has(ApplicationKey.TenantId) &&
-      this.localStorageRepository.has(ApplicationKey.Token) &&
-      this.localStorageRepository.has(ApplicationKey.CompanyId)
+      this.localStorageRepository.has(ApplicationKey.Token)
     )
   }
 
   public getToken(): string {
     return this.localStorageRepository.get(ApplicationKey.Token)
-  }
-
-  public getTenantId(): string {
-    return this.localStorageRepository.get(ApplicationKey.TenantId)
-  }
-
-  public getCompanyId(): string {
-    return this.localStorageRepository.get(ApplicationKey.CompanyId)
   }
 }

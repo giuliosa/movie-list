@@ -19,7 +19,7 @@ export class MoviesRepository {
     )
   }
 
-  retrieveMoviesById(id: string): Observable<IQueryResult<any>> {
+  retrieveMoviesById(id: string): Observable<IQueryResult<Movie>> {
     return this.remoteGateway.get(`movie/${id}`).pipe(
       map((resource: MovieResource) => new Movie(resource)),
       asQueryResult(),

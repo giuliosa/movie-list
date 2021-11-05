@@ -17,20 +17,10 @@ export class AuthInterceptor implements HttpInterceptor {
     let req = request
 
     if (req.url.includes(this.serverUrl)) {
-      const tenantLocalStorage = this.authenticationGateway.getTenantId()
-
       const tokenLocalStorage = this.authenticationGateway.getToken()
 
-      const companyLocalStorage = this.authenticationGateway.getCompanyId()
-
       req = req.clone({
-        setParams: {
-          tenantId: tenantLocalStorage,
-          empresaId: companyLocalStorage,
-        },
         setHeaders: {
-          tenantId: tenantLocalStorage,
-          empresaId: companyLocalStorage,
           authorization: `Bearer ${tokenLocalStorage}`,
         },
       })

@@ -26,8 +26,8 @@ export class RemoteGateway {
     if (!!url && url.charAt(0) !== '/') {
       newUrl = `/${url}`
     }
-
-    return `${this.url}${newUrl}`
+    console.log(`${this.url}${newUrl}?api_key=386f116f8dbb90bc974d638ed5149428`)
+    return `${this.url}${newUrl}?api_key=386f116f8dbb90bc974d638ed5149428`
   }
 
   private handle(response: HttpErrorResponse) {
@@ -36,7 +36,8 @@ export class RemoteGateway {
       response.status === HttpStatusCode.Unauthorized
     ) {
       this.authenticationGateway.unauthenticated()
-      this.router.navigate(['/autenticacao'])
+      // TODO: Arrumar a authenticação. Atualmente o componente de autenticação não funciona corretamente
+      this.router.navigate(['/autenticat'])
     }
   }
 
