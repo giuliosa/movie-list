@@ -12,7 +12,7 @@ export class StaticAuthInterceptor implements HttpInterceptor {
   public intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const httpHeaders = req.headers
       // .set('authorization', `Bearer ${this.key}`)
-      .set('Authorization', `Bearer 386f116f8dbb90bc974d638ed5149428`)
+      .set('Authorization', 'Bearer 386f116f8dbb90bc974d638ed5149428')
 
     const authReq = req.clone({ headers: httpHeaders })
 

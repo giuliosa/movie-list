@@ -2,17 +2,16 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-import { RemoteGatewayConfig } from "projects/library/src/app/infrastructure/gateways/remote-gateway/remote-gateway-config";
-
+import { RemoteGatewayConfig } from 'projects/library/src/app/infrastructure/gateways/remote-gateway/remote-gateway-config'
 
 const config = <RemoteGatewayConfig>{
-  serverUrl: 'https://api.themoviedb.org/3'
+  serverUrl: 'https://api.themoviedb.org/3',
 }
 
 export const environment = {
   production: false,
   remoteGatewayConfig: config,
-};
+}
 
 /*
  * For easier debugging in development mode, you can import the following file

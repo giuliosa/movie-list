@@ -1,6 +1,7 @@
-import { Component } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
-import { MoviesRepository } from "../../../infrastructure/repositories/movies/movies.repository";
+import { Component } from '@angular/core'
+import { ActivatedRoute, Router } from '@angular/router'
+
+import { MoviesRepository } from '../../../infrastructure/repositories/movies/movies.repository'
 
 @Component({
   selector: 'home',
@@ -16,6 +17,5 @@ export class HomeComponent {
     this.movieRepository.retrievePopularMovies().subscribe(movie => {
       console.log(movie)
     })
-
   }
 }

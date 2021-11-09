@@ -1,17 +1,24 @@
-import { CompanyResource } from "../../infrastructure/resources/company.resource"
+import { CompanyResource } from '../../infrastructure/resources/company.resource'
 
 export class Company {
   id: number
+
   description: string
+
   headquarters: string
+
   homepage: string
+
   logoPath: string
+
   name: string
+
   originCountry: string
+
   parentCompany: any
 
   constructor(resource?: CompanyResource) {
-    if(resource){
+    if (resource) {
       this.id = resource.id
       this.description = resource.description
       this.headquarters = resource.headquarters
