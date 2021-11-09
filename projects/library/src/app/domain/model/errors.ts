@@ -46,7 +46,9 @@ export class ValidationError implements Error {
 
   /* Error implementation */
   public readonly name = ValidationError.name
+
   public readonly message: string
+
   public readonly stack?: string
 
   private validationMessages: Array<InvalidationReason>

@@ -20,9 +20,7 @@ export class AuthenticationGateway {
   }
 
   public get isAuthenticated(): boolean {
-    return (
-      this.localStorageRepository.has(ApplicationKey.Token)
-    )
+    return this.localStorageRepository.has(ApplicationKey.Token)
   }
 
   public getToken(): string {
