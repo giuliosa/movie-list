@@ -1,0 +1,166 @@
+{
+  "root": true,
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+      }
+    },
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["./tsconfig.json"],
+        "createDefaultProgram": true
+      },
+      "parser": "@typescript-eslint/parser",
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+
+        // AirBnB Styleguide rule
+        "airbnb-typescript/base",
+
+        // Settings for Prettier
+        "prettier/@typescript-eslint",
+        "plugin:prettier/recommended"
+      ],
+      "rules": {
+        // Custom rules
+        "max-classes-per-file": "off",
+        "import/no-unresolved": "off",
+        "import/prefer-default-export": "off",
+        "import/no-extraneous-dependencies": "off",
+        "class-methods-use-this": "off",
+        "@typescript-eslint/lines-between-class-members": "off",
+        "@typescript-eslint/unbound-method": [
+          "error",
+          {
+            "ignoreStatic": true
+          }
+        ],
+        "@typescript-eslint/member-ordering": [
+          "error",
+          {
+            "default": [
+              "public-static-field",
+              "protected-static-field",
+              "private-static-field",
+              "public-static-method",
+              "protected-static-method",
+              "private-static-method",
+
+              "public-decorated-field",
+              "protected-decorated-field",
+              "private-decorated-field",
+              "public-instance-field",
+              "protected-instance-field",
+              "private-instance-field",
+              "public-abstract-field",
+              "protected-abstract-field",
+              "private-abstract-field",
+
+              "public-constructor",
+              "protected-constructor",
+              "private-constructor"
+            ]
+          }
+        ],
+        "prettier/prettier": ["error", {
+          "trailingComma": "all",
+          "tabWidth": 2,
+          "semi": false,
+          "singleQuote": true,
+          "bracketSpacing": true,
+          "printWidth": 100,
+          "endOfLine": "auto",
+          "arrowParens": "avoid"
+        }],
+        "import/order": [
+          "error",
+          {
+            "groups": ["builtin", "external", ["internal", "parent", "sibling", "index"]],
+            "newlines-between": "always",
+            "pathGroups": [
+              {
+                "pattern": "@angular/**",
+                "group": "builtin",
+                "position": "before"
+              }
+            ],
+            "pathGroupsExcludedImportTypes": [],
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": true
+            }
+          }
+        ],
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "enumMember",
+            "format": ["StrictPascalCase"],
+            "filter": {
+              "regex": "(?=(DTO|Routes))",
+              "match": false
+            }
+          },
+          {
+            "selector": "property",
+            "format": ["strictCamelCase", "UPPER_CASE"]
+          },
+          {
+            "selector": "variableLike",
+            "format": ["strictCamelCase"],
+            "filter": {
+              "regex": "(?=(DTO|Routes))",
+              "match": false
+            }
+          },
+          {
+            "selector": "memberLike",
+            "format": ["strictCamelCase"],
+            "filter": {
+              "regex": "(?=(DTO|Routes))",
+              "match": false
+            }
+          },
+          {
+            "selector": "typeLike",
+            "format": ["StrictPascalCase"],
+            "filter": {
+              "regex": "(?=(DTO|Routes))",
+              "match": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.component.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
+      "rules": {
+        "max-len": ["error", { "code": 200 }]
+      }
+    },
+    {
+      "files": ["*.component.ts"],
+      "extends": ["plugin:@angular-eslint/template/process-inline-templates"]
+    },
+    {
+      "files": ["*.spec.ts", "*.d.ts"],
+      "parserOptions": {
+        "project": ["./tsconfig.json"]
+      },
+      "extends": ["plugin:jasmine/recommended"],
+      "plugins": ["jasmine"],
+      "env": { "jasmine": true },
+      "rules": {
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-unused-expressions": "off"
+      }
+    }
+  ]
+}
+
+

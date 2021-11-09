@@ -46,7 +46,9 @@ export class RemoteGateway {
   }
 
   public downloadAsPost(url: string, payload: any): Observable<any> {
-    return this.httpClient.post(this.buildUrl(url), payload, { responseType: 'blob' })
+    return this.httpClient.post(this.buildUrl(url), payload, {
+      responseType: 'blob',
+    })
   }
 
   public uploadFile(url: string, form: FormData): Observable<any> {
@@ -60,7 +62,7 @@ export class RemoteGateway {
     return this.post(url, formData)
   }
 
-  //TODO add api_key
+  // TODO add api_key
   public get(url: string, params?: any, responseType?: ResponseType): Observable<any> {
     return this.request('GET', url, null, params, responseType)
   }

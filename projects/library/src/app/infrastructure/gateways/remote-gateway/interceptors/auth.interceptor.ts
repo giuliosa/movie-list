@@ -2,8 +2,8 @@ import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/c
 import { Injectable, Inject } from '@angular/core'
 
 import { Observable } from 'rxjs'
-import { AuthenticationGateway } from '../../authentication-gateway/authentication-gateway'
 
+import { AuthenticationGateway } from '../../authentication-gateway/authentication-gateway'
 import { serverUrlToken } from '../injection-keys'
 
 @Injectable()

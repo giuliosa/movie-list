@@ -29,9 +29,7 @@
               "projects/movie-list/src/favicon.ico",
               "projects/movie-list/src/assets"
             ],
-            "styles": [
-              "projects/movie-list/src/styles.css"
-            ],
+            "styles": ["projects/movie-list/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -96,9 +94,7 @@
               "projects/movie-list/src/favicon.ico",
               "projects/movie-list/src/assets"
             ],
-            "styles": [
-              "projects/movie-list/src/styles.css"
-            ],
+            "styles": ["projects/movie-list/src/styles.css"],
             "scripts": []
           }
         }
@@ -127,9 +123,7 @@
               "projects/library/src/favicon.ico",
               "projects/library/src/assets"
             ],
-            "styles": [
-              "projects/library/src/styles.css"
-            ],
+            "styles": ["projects/library/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -194,9 +188,7 @@
               "projects/library/src/favicon.ico",
               "projects/library/src/assets"
             ],
-            "styles": [
-              "projects/library/src/styles.css"
-            ],
+            "styles": ["projects/library/src/styles.css"],
             "scripts": []
           }
         }
