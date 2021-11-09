@@ -27,7 +27,7 @@ export class RemoteGateway {
     if (!!url && url.charAt(0) !== '/') {
       newUrl = `/${url}`
     }
-    return `${this.url}${newUrl}?api_key=${environment.apiToken}`;
+    return `${this.url}${newUrl}?api_key=${environment.apiToken}`
   }
 
   private handle(response: HttpErrorResponse) {
