@@ -3,6 +3,7 @@ import { Inject, Injectable } from '@angular/core'
 import { Router } from '@angular/router'
 
 import { HttpStatusCode } from 'projects/library/src/app/infrastructure/gateways/remote-gateway/interceptors/error.interceptor'
+import { environment } from 'projects/movie-list/src/environments/environment'
 import { Observable, throwError } from 'rxjs'
 import { catchError } from 'rxjs/operators'
 
@@ -26,8 +27,7 @@ export class RemoteGateway {
     if (!!url && url.charAt(0) !== '/') {
       newUrl = `/${url}`
     }
-    console.log(`${this.url}${newUrl}?api_key=386f116f8dbb90bc974d638ed5149428`)
-    return `${this.url}${newUrl}?api_key=386f116f8dbb90bc974d638ed5149428`
+    return `${this.url}${newUrl}?api_key=${environment.apiToken}`;
   }
 
   private handle(response: HttpErrorResponse) {
