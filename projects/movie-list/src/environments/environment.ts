@@ -11,6 +11,7 @@ const config = <RemoteGatewayConfig>{
 export const environment = {
   production: false,
   remoteGatewayConfig: config,
+  apiToken: '386f116f8dbb90bc974d638ed5149428',
 }
 
 /*
