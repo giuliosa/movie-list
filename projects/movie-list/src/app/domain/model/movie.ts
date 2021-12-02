@@ -69,7 +69,7 @@ export class Movie {
       this.originalTitle = resource.original_title
       this.overview = resource.overview
       this.popularity = resource.popularity
-      this.posterPath = resource.posterPath
+      this.posterPath = resource.poster_path
       this.productionCompanies = resource.production_companies
         ? resource.production_companies.map(item => new Company(item))
         : []

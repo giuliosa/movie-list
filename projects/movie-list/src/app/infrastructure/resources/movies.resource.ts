@@ -28,7 +28,7 @@ export class MovieResource {
 
   popularity: number
 
-  posterPath: string
+  poster_path: string // eslint-disable-line
 
   production_companies: CompanyResource[] // eslint-disable-line
 
