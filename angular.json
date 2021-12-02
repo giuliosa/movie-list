@@ -27,9 +27,17 @@
             "tsConfig": "projects/movie-list/tsconfig.app.json",
             "assets": [
               "projects/movie-list/src/favicon.ico",
-              "projects/movie-list/src/assets"
+              "projects/movie-list/src/assets",
+              {
+                "glob": "**/*",
+                "input": "projects/library/src/assets",
+                "output": "./assets"
+              }
             ],
-            "styles": ["projects/movie-list/src/styles.css"],
+            "styles": [
+              "projects/movie-list/src/styles.css",
+              "projects/movie-list/src/tailwind.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -123,7 +131,10 @@
               "projects/library/src/favicon.ico",
               "projects/library/src/assets"
             ],
-            "styles": ["projects/library/src/styles.css"],
+            "styles": [
+              "projects/library/src/styles.css",
+              "projects/library/src/tailwind.scss"
+            ],
             "scripts": []
           },
           "configurations": {
