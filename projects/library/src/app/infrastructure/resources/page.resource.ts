@@ -1,13 +1,10 @@
 export interface PageResource<T> {
-  content: Array<T>
+  results: Array<T>
   nextLink: string
   previousLink: string
-  pageMetadata: PageMetadataResource
-}
-
-export interface PageMetadataResource {
-  size: number
-  number: number
-  totalElements: number
-  totalPages: number
+  page: number
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  total_pages: number
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  total_results: number
 }
