@@ -7,12 +7,12 @@ export class Page<T> {
   ): Page<S> {
     const page = new Page<S>()
 
-    page.pageSize = pageResource.pageMetadata?.size
-    page.totalItemsCount = pageResource.pageMetadata?.totalElements
-    page.totalPagesCount = pageResource.pageMetadata?.totalPages
-    page.currentPage = pageResource.pageMetadata?.number
+    page.pageSize = pageResource.results.length
+    page.totalItemsCount = pageResource.total_results
+    page.totalPagesCount = pageResource.total_pages
+    page.currentPage = pageResource.page
 
-    page.data = pageResource.content.map(transform)
+    page.data = pageResource.results.map(transform)
 
     return page
   }
