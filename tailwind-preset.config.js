@@ -45,7 +45,7 @@ module.exports = {
       'primary-orange-500': '#F37920',
       'primary-orange-400': '#FBBE78',
       'primary-orange-300': '#FDD9A5',
-
+      // Colocar as cores corretas
       'primary-blue-700': '#18394a',
       'primary-blue-600': '#39627b',
       'primary-blue-500': '#62839c',
