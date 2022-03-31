@@ -8,6 +8,7 @@ import { RemoteGatewayModule } from 'projects/library/src/app/infrastructure/gat
 import { environment } from '../environments/environment'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
+import { SidebarModule } from './presentation/components/sidebar/sidebar.module'
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,6 +17,7 @@ import { AppComponent } from './app.component'
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    SidebarModule,
     RemoteGatewayModule.forRoot(environment.remoteGatewayConfig),
   ],
   providers: [],

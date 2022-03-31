@@ -1,3 +1,17 @@
-<section class="w-full h-screen bg-primary-blue-700">
-  <router-outlet></router-outlet>
+<section class="w-full h-screen bg-indigo-900">
+  <div class="w-full mb-10 flex flex-row px-10 pt-8 items-center justify-between">
+    <div class="rounded-full w-14 h-14 bg-indigo-300"></div>
+    <div class="text-white flex flex-col">
+      <span>Oi, Giulio Sá</span>
+      <span>Como você está hoje?</span>
+    </div>
+    <form>
+      <input type="text">
+    </form>
+    <div class="rounded-md w-14 h-14 bg-indigo-300"></div>
+  </div>
+  <section class="flex flex-row pl-10">
+    <sidebar></sidebar>
+    <router-outlet></router-outlet>
+  </section>
 </section>
